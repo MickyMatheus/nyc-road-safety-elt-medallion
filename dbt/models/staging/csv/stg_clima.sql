@@ -1,0 +1,1 @@
+SELECT * FROM {{ source('raw_clima', 'clima_historico') }}

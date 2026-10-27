@@ -1,0 +1,1 @@
+SELECT * FROM {{ source('raw_open_data', 'equp_equipamiento') }}

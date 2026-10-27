@@ -1,0 +1,1 @@
+SELECT * FROM {{ source('raw_ems', 'INCD_INCIDENTES_EMS') }}

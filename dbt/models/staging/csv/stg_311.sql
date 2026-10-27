@@ -1,0 +1,1 @@
+SELECT * FROM {{ source('raw_311', 'quejas_311') }}

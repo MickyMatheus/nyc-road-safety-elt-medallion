@@ -1,0 +1,68 @@
+version: 2
+
+sources:
+  - name: raw_clima
+    database: NYC_DOT_DW
+    schema: RAW_CLIMA
+    tables:
+      - name: clima_historico
+
+  - name: raw_311
+    database: NYC_DOT_DW
+    schema: RAW_311
+    tables:
+      - name: quejas_311
+
+  - name: raw_open_data
+    database: NYC_DOT_DW
+    schema: RAW_OPEN_DATA
+    tables:
+      - name: cmsr_comisarias
+      - name: equp_equipamiento
+      - name: evid_evidencias
+      - name: expd_expedientes
+      - name: infr_infracciones
+      - name: mant_mantenimientos
+      - name: ofcl_oficiales
+      - name: ptrl_patrullas
+
+  - name: raw_ems
+    database: NYC_DOT_DW 
+    schema: RAW_EMS
+    tables:
+      - name: AMBL_AMBULANCIAS
+      - name: ATNC_ATENCION_MEDICA
+      - name: INCD_INCIDENTES_EMS
+      - name: NSCM_NOSOCOMIOS
+      - name: PERS_PERSONAS
+      - name: TCAD_TIEMPOS_RESPUESTA
+      
+  - name: raw_dmv
+    database: NYC_DOT_DW
+    schema: RAW_TRANSITO  # Apunta al esquema real donde Airbyte las cargó
+    tables:
+      - name: LCNC_LICENCIAS
+        description: "Catálogo maestro de licencias de conducir del DMV"
+      - name: VHCL_VEHICULOS
+        description: "Padrón maestro de vehículos registrados del DMV"
+      - name: REGV_REGISTRO_VEHICULO_ACCIDENTE
+        description: "Registro de implicación y relación vehículo-accidente del DMV"
+
+  - name: raw_transito
+    database: NYC_DOT_DW
+    schema: RAW_TRANSITO
+    tables:
+      - name: LOCN_UBICACIONES
+        description: "Catálogo geoespacial y de direcciones de NYC"
+      - name: INCD_INCIDENTES
+        description: "Registro central transaccional de colisiones viales"
+      - name: CONT_FACTORES
+        description: "Catálogo de factores contribuyentes al siniestro"
+      - name: INFC_INCIDENTE_FACTOR
+        description: "Tabla puente entre colisiones y factores causales"
+      - name: DIST_DISTRITOS
+        description: "Catálogo maestro de distritos (Boroughs) de NYC"
+      - name: TACT_TIPOS_ACTOR
+        description: "Catálogo de tipos de actor vial (peatón, ciclista, etc.)"
+      - name: INVA_INCIDENTE_ACTOR
+        description: "Detalle de personas afectadas por tipo de actor vial"
